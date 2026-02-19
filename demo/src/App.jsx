@@ -5,37 +5,46 @@ import './App.css'
 
 import React, { Component } from "react";
 
-class Person extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Name: {this.props.name}</h2>
-        <h3>Age: {this.props.age}</h3>
-      </div>
-    );
-  }
-}
-
+import './App.css'
 
 function App() {
-  const fruits = ["Apple", "Mango", "Orange", "Banana"];
+
+
+const first = [1, 2, 3]
+const second = [...first, 4, 5, 6] 
+
+const fruit = ['apple', 'banana', 'orange']  
+  
+  
+  class Person {
+    constructor(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    greet() {
+      return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
+  }
+  const p = new Person("BAVA", 20)
+
+
+  const [a, b, c] = first 
 
   return (
+
     <div>
-      <h1>Simple Array List</h1>
+    <ul>
+      {fruit.map((item) => <li key={item}>{item}</li>)}
+    </ul>
+    <p>First array: {first}</p><p>Second array: {second}</p>
 
-      <ul>
-        {fruits.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+    <p>Person: {p.name}, Age: {p.age}</p>
+    <p>{p.greet()}</p>
 
-      <hr />
-
-      <h1>Person Details</h1>
-      <Person name="Bava" age={20} />
-    </div>
-  );
+    <p>Destructured values: a={a}, b={b}, c={c}</p>
+</div>
+  )
 }
 
-export default App;
+export default App
