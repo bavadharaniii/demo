@@ -1,6 +1,5 @@
-import "./App.css";
 import React from "react";
-import Football from "./Football";   // ✅ Match file name EXACTLY
+import Football from "./football";
 
 function App() {
   return (

@@ -1,9 +1,5 @@
-import React from "react";
-function goal(){
-    return(
-        <div>
-            <h1>goal scored</h1>
-        </div>
-    )
+function Goal() {
+  return <h2>Goal Scored! ⚽🔥</h2>;
 }
-export default goal;
+
+export default Goal;
